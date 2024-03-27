@@ -1,6 +1,11 @@
-document.getElementById("close").addEventListener("click", function () {
-  document.getElementById("alert").style.display = "none";
+document.querySelector("#close").addEventListener("click", function () {
+  document.querySelector("#alert").style.display = "none";
 });
 function 알림창열기(구멍) {
-  document.getElementById("alert").style.display = 구멍;
+  document.querySelector("#alert").style.display = 구멍;
 }
+document
+  .querySelector(".navbar-toggler")
+  .addEventListener("click", function () {
+    document.getElementsByClassName("list-group")[0].classList.toggle("show");
+  });
