@@ -1,3 +1,3 @@
-document.querySelector(".login-button").addEventListener("click", function () {
-  document.querySelector(".modal").classList.add("show");
+document.querySelector("#login").addEventListener("click", function () {
+  document.querySelector(".black-bg").classList.add("show-modal");
 });
