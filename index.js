@@ -1,11 +1,3 @@
-document.querySelector("#close").addEventListener("click", function () {
-  document.querySelector("#alert").style.display = "none";
+document.querySelector(".login-button").addEventListener("click", function () {
+  document.querySelector(".modal").classList.add("show");
 });
-function 알림창열기(구멍) {
-  document.querySelector("#alert").style.display = 구멍;
-}
-document
-  .querySelector(".navbar-toggler")
-  .addEventListener("click", function () {
-    document.querySelector(".list-group").classList.toggle("show");
-  });
