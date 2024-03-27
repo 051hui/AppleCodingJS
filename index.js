@@ -1,6 +1,3 @@
-document.getElementById("close").addEventListener("click", function () {
-  document.getElementById("alert").style.display = "none";
+document.querySelector(".login-button").addEventListener("click", function () {
+  document.querySelector(".modal").classList.add("show");
 });
-function 알림창열기(구멍) {
-  document.getElementById("alert").style.display = 구멍;
-}
