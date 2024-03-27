@@ -7,5 +7,5 @@ function 알림창열기(구멍) {
 document
   .querySelector(".navbar-toggler")
   .addEventListener("click", function () {
-    document.getElementsByClassName("list-group")[0].classList.toggle("show");
+    document.querySelector(".list-group").classList.toggle("show");
   });
