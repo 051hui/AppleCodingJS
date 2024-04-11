@@ -19,25 +19,30 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-function game(n) {
-  if (n % 9 == 0) {
-    console.log("박수를 치세요*2");
-  } else if (n % 3 == 0) {
-    console.log("박수를 치세요");
+//darkmode, lightmode
+var count = 0;
+document.querySelector("#badge").addEventListener("click", function () {
+  count = count + 1;
+  if (count % 2 == 1) {
+    badge.innerHTML = "Light";
   } else {
-    console.log("통과");
+    badge.innerHTML = "Dark";
+  }
+});
+
+var 예금액 = 10000;
+var 미래예금액 = 0;
+function totalMoney(예금액) {
+  if (예금액 < 50000) {
+    미래예금액 = 예금액 * 1.15 * 1.15;
+  } else {
+    미래예금액 = 예금액 * 1.2 * 1.2;
   }
 }
+totalMoney(예금액);
+console.log(미래예금액);
 
-function 합격했냐(a, b) {
-  if (a < 40 || b < 40) {
-    console.log("불합격");
-  } else if (a + b >= 120) {
-    console.log("합격");
-  } else {
-    console.log("불합격");
-  }
-}
-
-//game(9);
-//합격했냐(50, 50);
+var first = 360;
+var last = 0;
+last = first + (first * 2) / 3 + (((first * 2) / 3) * 2) / 3;
+console.log(last);
