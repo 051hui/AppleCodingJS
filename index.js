@@ -1,11 +1,9 @@
 const login = document.querySelector("#login");
 const form = document.querySelector("form");
 
-login.addEventListener("click", showModal());
-
-function showModal() {
+login.addEventListener("click", function () {
   document.querySelector(".black-bg").classList.add("show-modal");
-}
+});
 
 form.addEventListener("submit", function (e) {
   if (
@@ -19,30 +17,17 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-//darkmode, lightmode
-var count = 0;
-document.querySelector("#badge").addEventListener("click", function () {
-  count = count + 1;
-  if (count % 2 == 1) {
-    badge.innerHTML = "Light";
-  } else {
-    badge.innerHTML = "Dark";
-  }
+document.querySelector("#close").addEventListener("click", function () {
+  document.querySelector(".black-bg").classList.remove("show-modal");
 });
 
-var 예금액 = 10000;
-var 미래예금액 = 0;
-function totalMoney(예금액) {
-  if (예금액 < 50000) {
-    미래예금액 = 예금액 * 1.15 * 1.15;
+let i = 5;
+setInterval(() => {
+  if (i == 0) {
+    document.querySelector(".alert").remove();
   } else {
-    미래예금액 = 예금액 * 1.2 * 1.2;
+    document.querySelector(".alert").innerHTML =
+      i + "초 이내 구매시 사은품 증정!";
+    i--;
   }
-}
-totalMoney(예금액);
-console.log(미래예금액);
-
-var first = 360;
-var last = 0;
-last = first + (first * 2) / 3 + (((first * 2) / 3) * 2) / 3;
-console.log(last);
+}, 1000);
