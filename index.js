@@ -51,3 +51,72 @@ setInterval(() => {
     i--;
   }
 }, 1000);
+
+var count = 1;
+
+document.querySelector(".slide-1").addEventListener("click", function () {
+  document.querySelector(".slide-container").style.transform =
+    "translateX(0vw)";
+  count = 1;
+});
+
+document.querySelector(".slide-2").addEventListener("click", function () {
+  document.querySelector(".slide-container").style.transform =
+    "translateX(-100vw)";
+  count = 2;
+});
+
+document.querySelector(".slide-3").addEventListener("click", function () {
+  document.querySelector(".slide-container").style.transform =
+    "translateX(-200vw)";
+  count = 3;
+});
+
+document.querySelector(".prev").addEventListener("click", function () {
+  if (count == 1) {
+    document.querySelector(".slide-container").style.transform =
+      "translateX(-200vw)";
+    count = 3;
+    count = 3;
+  } else if (count == 2) {
+    document.querySelector(".slide-container").style.transform =
+      "translateX(0vw)";
+    count = 1;
+  } else if (count == 3) {
+    document.querySelector(".slide-container").style.transform =
+      "translateX(-100vw)";
+    count = 2;
+  }
+});
+
+document.querySelector(".next").addEventListener("click", function () {
+  if (count == 1) {
+    document.querySelector(".slide-container").style.transform =
+      "translateX(-100vw)";
+    count = 2;
+  } else if (count == 2) {
+    document.querySelector(".slide-container").style.transform =
+      "translateX(-200vw)";
+    count = 3;
+  } else if (count == 3) {
+    document.querySelector(".slide-container").style.transform =
+      "translateX(0vw)";
+    count = 1;
+  }
+});
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 100) {
+    document.querySelector(".navbar-brand").style.fontSize = "20px";
+  }
+});
+
+document.querySelector(".lorem").addEventListener("scroll", function () {
+  스크롤양 = document.querySelector(".lorem").scrollTop;
+  실제높이 = document.querySelector(".lorem").scrollHeight;
+  높이 = document.querySelector(".lorem").clientHeight;
+  if (스크롤양 + 높이 > 실제높이 - 10) {
+    alert("다읽음");
+  }
+});
+
+
