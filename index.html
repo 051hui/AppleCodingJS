@@ -6,23 +6,57 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="black-bg">
-      <div class="white-bg">
-        <h4>로그인하세요</h4>
-        <form action="success.html">
-          <div class="my-3">
-            <input type="text" class="form-control" id="email" />
+    <nav class="navbar">
+      <span class="navbar-brand">JSShop</span>
+    </nav>
+    <div class="banner">
+      <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인하세요</h4>
+          <form action="success.html">
+            <div class="my-3">
+              <input type="text" class="form-control" id="email" />
+            </div>
+            <div class="my-3">
+              <input type="password" class="form-control" id="password" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="send">
+              전송
+            </button>
+            <button type="button" class="btn btn-danger" id="close">
+              닫기
+            </button>
+          </form>
+        </div>
+      </div>
+      <button id="login">로그인</button>
+      <div class="alert alert-danger">5초 이내 구매시 사은품 증정!</div>
+      <div style="overflow: hidden">
+        <div class="slide-container">
+          <div class="slide-box">
+            <img src="img/a.jpg" alt="" />
           </div>
-          <div class="my-3">
-            <input type="password" class="form-control" id="password" />
+          <div class="slide-box">
+            <img src="img/b.jpg" alt="" />
           </div>
-          <button type="submit" class="btn btn-primary" id="send">전송</button>
-          <button type="button" class="btn btn-danger" id="close">닫기</button>
-        </form>
+          <div class="slide-box">
+            <img src="img/c.jpg" alt="" />
+          </div>
+        </div>
       </div>
     </div>
-    <button id="login">로그인</button>
-    <div class="alert alert-danger">5초 이내 구매시 사은품 증정!</div>
+    <button class="prev">이전</button>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next">다음</button>
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas
+      voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat
+      sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+      praesentium exercitationem.
+    </div>
+    <div style="height: 1000px"></div>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
