@@ -119,4 +119,8 @@ document.querySelector(".lorem").addEventListener("scroll", function () {
   }
 });
 
-
+document.querySelector(".black-bg").addEventListener("click", function (e) {
+  if (e.target == document.querySelector(".black-bg")) {
+    document.querySelector(".black-bg").classList.remove("show-modal");
+  }
+});
