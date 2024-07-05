@@ -41,16 +41,16 @@ document.querySelector("#close").addEventListener("click", function () {
   document.querySelector(".black-bg").classList.remove("show-modal");
 });
 
-let i = 5;
-setInterval(() => {
-  if (i == 0) {
-    document.querySelector(".alert").remove();
-  } else {
-    document.querySelector(".alert").innerHTML =
-      i + "초 이내 구매시 사은품 증정!";
-    i--;
-  }
-}, 1000);
+// let i = 5;
+// setInterval(() => {
+//   if (i == 0) {
+//     document.querySelector(".alert").remove();
+//   } else {
+//     document.querySelector(".alert").innerHTML =
+//       i + "초 이내 구매시 사은품 증정!";
+//     i--;
+//   }
+// }, 1000);
 
 var count = 1;
 
@@ -76,7 +76,6 @@ document.querySelector(".prev").addEventListener("click", function () {
   if (count == 1) {
     document.querySelector(".slide-container").style.transform =
       "translateX(-200vw)";
-    count = 3;
     count = 3;
   } else if (count == 2) {
     document.querySelector(".slide-container").style.transform =
@@ -123,4 +122,43 @@ document.querySelector(".black-bg").addEventListener("click", function (e) {
   if (e.target == document.querySelector(".black-bg")) {
     document.querySelector(".black-bg").classList.remove("show-modal");
   }
+});
+
+let startX = 0;
+let pressed = false;
+
+document
+  .querySelector(".slide-box")
+  .addEventListener("touchstart", function (e) {
+    startX = e.touches[0].clientX;
+    pressed = true;
+  });
+
+document
+  .querySelector(".slide-box")
+  .addEventListener("touchmove", function (e) {
+    if (pressed == true) {
+      document.querySelector(
+        ".slide-container"
+      ).style.transform = `translateX(${e.touches[0].clientX - startX}px)`;
+    }
+  });
+
+document.querySelector(".slide-box").addEventListener("touchend", function (e) {
+  pressed = false;
+  console.log(pressed);
+  if (e.changedTouches[0].clientX - startX < -100) {
+    document.querySelector(
+      ".slide-container"
+    ).style.transform = `translateX(-100vw)`;
+    document.querySelector(".slide-container").style.transition = `all 0.5s`;
+  } else {
+    document.querySelector(
+      ".slide-container"
+    ).style.transform = `translateX(0vw)`;
+    document.querySelector(".slide-container").style.transition = `all 0.5s`;
+  }
+  setTimeout(() => {
+    document.querySelector(".slide-container").style.transition = "none";
+  }, 500);
 });
